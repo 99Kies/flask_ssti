@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="warpper" style="width: 700px; margin: auto">
+		<h1>{{ title }}</h1>
+		<hr>
+		<p>{{ body|safe }}</p>
+		<hr>
+		<a href="{{ url_for('index') }}">Home</a>
+	</div>
+{% endblock %}

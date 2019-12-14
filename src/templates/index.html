@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script src="https://cdn.ckeditor.com/4.13.0/standard-all/ckeditor.js"></script>
+	<div class="warpper" style="width: 700px; margin: auto">
+		<h1>粗心大意的程序员</h1>
+		<form method="post">
+			{{ form.csrf_token }}
+			{{ form.title.label }}<br>
+			{{ form.title }}<br><br>
+			{{ form.body.label }}<br>
+			{{ form.body(id="editor1") }}
+			<br>
+			{{ form.submit }}
+		</form>
+		{{ ckeditor.load() }}
+	{{ ckeditor.config(name='body') }}
+	</div>
+
+
+{% endblock %}
